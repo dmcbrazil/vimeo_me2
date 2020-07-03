@@ -52,8 +52,6 @@ module VimeoMe2
 
     def update
       body = @video
-      # temporary fix, because API does not accept privacy in request
-      body.delete('privacy')
       body.delete('type')
       patch(nil, body:body, code:[200,204])
     end
